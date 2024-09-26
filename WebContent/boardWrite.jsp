@@ -48,21 +48,21 @@
         .btn-container {
             display: flex;
             justify-content: space-between;
-            gap: 10px;
+            gap: 10px; /* 버튼 사이 간격 조정 */
             margin-top: 20px;
         }
         .sk-logo {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 100px;
+            width: 100px; /* 로고 크기 조정 */
             height: auto;
         }
     </style>
 </head>
 <body>
     <!-- SK 로고 이미지 추가 -->
-    <img src="images/Shopping_Cart_Logo.png" alt="SK Logo" class="sk-logo">
+    <img src="images/sk_shieldus_comm_rgb_kr.png" alt="SK Logo" class="sk-logo">
     
     <div class="container board-write-container">
         <h2 class="title-section">게시글 작성</h2>
@@ -82,31 +82,31 @@
             }
         %>
         
-        <form action="boardWriteProcess.jsp" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="title">제목</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요" required>
-            </div>
-            <div class="form-group">
-                <label for="author">작성자</label>
-                <!-- 로그인된 사용자를 자동으로 설정하고, 읽기 전용으로 만듭니다 -->
-                <input type="text" class="form-control" id="author" name="author" value="<%= username %>" readonly>
-            </div>
-            <div class="form-group">
-                <label for="content">내용</label>
-                <!-- 큰 내용도 제한 없이 입력 가능하도록 설정 -->
-                <textarea class="form-control" id="content" name="content" rows="20" placeholder="내용을 입력하세요" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="uploadFile">파일 업로드</label>
-                <!-- 파일 크기 제한을 제거한 파일 업로드 -->
-                <input type="file" class="form-control-file" id="uploadFile" name="uploadFile">
-            </div>
-            <div class="btn-container">
-                <button type="submit" class="btn ganjibutton" style="flex: 1;">작성 완료</button>
-                <a href="boardList.jsp" class="btn ganjibutton" style="flex: 1;">목록으로</a>
-            </div>
-        </form>
+<form action="boardWriteProcess.jsp" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="title">제목</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요" required>
+    </div>
+    <div class="form-group">
+        <label for="author">작성자</label>
+        <!-- 로그인된 사용자를 자동으로 설정하고, 읽기 전용으로 만듭니다 -->
+        <input type="text" class="form-control" id="author" name="author" value="<%= username %>" readonly>
+    </div>
+    <div class="form-group">
+        <label for="content">내용</label>
+        <textarea class="form-control" id="content" name="content" rows="5" placeholder="내용을 입력하세요" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="uploadFile">파일 업로드</label>
+        <input type="file" class="form-control-file" id="uploadFile" name="uploadFile">
+    </div>
+    <div class="btn-container">
+        <button type="submit" class="btn ganjibutton" style="flex: 1;">작성 완료</button>
+        <a href="boardList.jsp" class="btn ganjibutton" style="flex: 1;">목록으로</a>
+    </div>
+</form>
+
+
     </div>
 </body>
 </html>
